@@ -1,0 +1,10 @@
+{
+    "_id": "71",
+    "language_id": 71,
+    "expected_output": "Passed",
+    "expected_answer": "    moveForward()\n    turnRight()\n    moveForward()\n    moveForward()\n    moveForward()\n    collectGoal()\n    moveForward()\n    collectGoal()   ",
+    "data": [
+        "import sys\n\ndef eprint(*args, **kwargs):\n    print(*args, file=sys.stderr, **kwargs)\n\ndef moveForward():\n    print(\"F\")\n\ndef moveBackward():\n    print(\"B\")\n\ndef turnLeft():\n    print(\"L\")\n\ndef turnRight():\n    print(\"R\")\n\ndef collectGoal():\n    print(\"G\")\n \ntry:\n    # Student Code\n",
+        "\n    # Student Code\n\nexcept Exception as e:\n    eprint(e)\n"
+    ]
+}

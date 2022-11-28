@@ -26,7 +26,10 @@ while (True):
             print(Fore.LIGHTGREEN_EX + "\nUsed EXERCISE_TEST_FILE_LOCATION and ID to generate the Exercise Test File Path!" + Style.RESET_ALL)
         else:
             exercise_test_file_path = input(Style.BRIGHT + "Enter Exercise Test Code File Path: " + Style.RESET_ALL) # Otherwise, ask for exercise_test_file_path.
-        
+
+        file_split = exercise_test_file_path.split('/')
+        file_prefix = file_split[len(file_split)-1].removesuffix(FILE_EXTENSION)
+        print(file_prefix)
         exercise_test_file = open(exercise_test_file_path, "r")
 
         code = exercise_test_file.read()
@@ -62,8 +65,14 @@ while (True):
         try:
             pyperclip.copy(request_body)
             print(Fore.LIGHTGREEN_EX + "Copied to clipboard!\n\n\n" + Style.RESET_ALL)
+
         except:
             print(Fore.LIGHTRED_EX + "NOT copied to clipboard!\n\n\n" + Style.RESET_ALL)
+        # savedFile = open(file_prefix+'Result.txt','w')
+        # savedFile.write(str(request_body))
+        with open(file_prefix+'Result.txt','w') as savedFile:
+            savedFile.write(str(request_body))
+
 
     except Exception as e:
         print(Fore.LIGHTRED_EX + "\nError: ", e, "\n\n\n" + Style.RESET_ALL)
