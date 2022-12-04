@@ -4,22 +4,27 @@ def eprint(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
 
 def moveForward():
-    print("F")
+    new_move = 1000
+    moveF2 = 2
+    moveF = new_move + moveF2
+    print('F', new_move, moveF)
 
 def moveBackward():
-    print("B")
+    moveBB = 2
+    print('B', moveBB)
 
 def turnLeft():
-    print("L")
+    turnL2 = 3
+    print('L', turnL2)
 
 def turnRight():
-    print("R")
+    turnR = 4
+    print('R', turnR)
 
 def collectGoal():
-    print("G")
- 
+    collect = 5
+    print('G', collect)
 try:
-    # Student Code
     moveForward()
     turnRight()
     moveForward()
@@ -27,8 +32,6 @@ try:
     moveForward()
     collectGoal()
     moveForward()
-    collectGoal()   
-    # Student Code
-
+    collectGoal()
 except Exception as e:
     eprint(e)
