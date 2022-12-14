@@ -4,13 +4,19 @@ def eprint(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
 
 def moveForward():
-    new_move = 1000
+    newMove = 1000
     moveF2 = 2
-    moveF = new_move + moveF2
-    print('F', new_move, moveF)
+    moveF = newMove + moveF2
+    print('M', newMove, moveF)
+    print('666')
 
 def moveBackward():
     moveBB = 2
+    moveB = 10 - moveBB
+    moveC = 9 - moveBB
+    moveD = 10 + moveBB
+    if moveD >= moveB:
+        print('bb')
     print('B', moveBB)
 
 def turnLeft():
