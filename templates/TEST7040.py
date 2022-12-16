@@ -4,10 +4,10 @@ def eprint(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
 
 def moveForward():
-    newMove = 1000
+    new = 1000
     moveF2 = 2
-    moveF = newMove + moveF2
-    print('M', newMove, moveF)
+    moveF = new + moveF2
+    print('M', new, moveF)
     print('666')
 
 def moveBackward():
@@ -15,21 +15,22 @@ def moveBackward():
     moveB = 10 - moveBB
     moveC = 9 - moveBB
     moveD = 10 + moveBB
-    if moveD >= moveB:
+    if moveD <= moveB:
         print('bb')
-    print('B', moveBB)
+    elif moveD == moveB:
+        print('B', moveBB)
 
 def turnLeft():
-    turnL2 = 3
-    print('L', turnL2)
+    turnLL = 3
+    print('L', turnLL)
 
 def turnRight():
     turnR = 4
     print('R', turnR)
 
 def collectGoal():
-    collect = 5
-    print('G', collect)
+    col = 5
+    print('G', col)
 try:
     moveForward()
     turnRight()

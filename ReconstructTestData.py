@@ -71,17 +71,22 @@ visitor2 = reWriteCode2()
 visitor3 = reWriteCode3()
 
 
-flag = True
 
+SPEC_FILE_FORMAT = {
+    'name_variables':[],
+    'string_constant':[],
+    'comparison_operators':[]
+}
+
+flag = True
 while(flag == True):
     print('type in the number for the operation')
     print('1 for Variable Name change')
     print('2 for String Constant change')
     print('3 for Comparison Operator change')
-    print('4 for quit')
+    print('4 for save and quit')
     OPTION = input(Style.BRIGHT + Style.RESET_ALL)
-    try:
-        if OPTION == "1":
+    if OPTION == "1":
             function_index_str = input(Style.BRIGHT + 'choose function that you want to modify(following the order from up to down, starting from 1)' + Style.RESET_ALL)
             function_index_number = int(function_index_str)
             variable_Name = input(Style.BRIGHT + "Enter Variable Name want to be changed: " + Style.RESET_ALL)
@@ -96,15 +101,18 @@ while(flag == True):
                 with open(file_path, 'w') as new_savedFile:
                     new_savedFile.write(ast.unparse(root))
                     print('file changed successfully!')
-                config_file = json.dumps({
-                'name_variables':{
+                # fill data into spec format
+                changing_operations = {
                     'origin_var':variable_Name,
                     'current_var': new_Variable_Name
-                }
-            }, indent=4)
+            }
+                SPEC_FILE_FORMAT['name_variables'].append(changing_operations)
+                
+                print(SPEC_FILE_FORMAT)
             except:
                 print('save failed')
-        elif OPTION == "2":
+                            
+    elif OPTION == "2":
             try: 
                 function_index_str = input(Style.BRIGHT + 'choose function that you want to modify(following the order from up to down, starting from 1)' + Style.RESET_ALL)
                 function_index_number = int(function_index_str)
@@ -115,14 +123,19 @@ while(flag == True):
                     if(item.end_col_offset == modified.end_col_offset):
                         item = modified
                     
-                    try:
-                        with open(file_path, 'w') as new_savedFile:
-                            new_savedFile.write(ast.unparse(root))
-                    except:
-                        print('save failed')
+                try:
+                    with open(file_path, 'w') as new_savedFile:
+                        new_savedFile.write(ast.unparse(root))
+                    changing_operations = {
+                        "origin_var":constant_string,
+                        "current_var": new_constant_string
+                    }
+                    SPEC_FILE_FORMAT['string_constant'].append(changing_operations)
+                except:
+                    print('save failed')
             except Exception as e:
                 print(e)
-        elif OPTION =="3":
+    elif OPTION =="3":
             try: 
                 function_index_str = input(Style.BRIGHT + 'choose function that you want to modify(following the order from up to down, starting from 1)' + Style.RESET_ALL)
                 function_index_number = int(function_index_str)
@@ -133,17 +146,26 @@ while(flag == True):
                     if(item.end_col_offset == modified.end_col_offset):
                         item = modified
                     
-                    try:
-                        with open(file_path, 'w') as new_savedFile:
-                            new_savedFile.write(ast.unparse(root))
-                    except:
-                        print('save failed')
+                try:
+                    with open(file_path, 'w') as new_savedFile:
+                        new_savedFile.write(ast.unparse(root))
+                    changing_operations = { 
+                        'origin_var': expression.split(' ')[1],
+                        'current_var': new_operator
+                        }
+                    SPEC_FILE_FORMAT['comparison_operators'].append(changing_operations)
+                except:
+                    print('save failed')
             except Exception as e:
                 print(e)
 
-        elif OPTION == "4": flag = False
-    except:
-        print('you got the wrong input, please try again!')
+    elif OPTION == "4": 
+        output_file = open("config.json", 'a')
+        json.dump(SPEC_FILE_FORMAT, output_file, indent=4)
+        flag = False
+        #write json data into specfic parameters' value
+        
+    else: print('Wrong option input, please try again!')
 
 # print(ast.dump(new_root,indent=4))
 # print(x.body[0].value.right.value)
