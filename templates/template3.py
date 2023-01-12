@@ -10,11 +10,12 @@ try:
     payload1 = 2.1
     payload2 = 1.2
     budget = 20
-    # Student code
+    # Student Code
     if (payload1 < payload2):
         budget -= payload1
     if (payload2 < payload1):
         budget -= payload2
+    # Student Code
     # assertions
     assert budget == 18.8
 except Exception as e:

@@ -10,13 +10,14 @@ try:
     # Need to check that the print statements are correct
     fur = False
     feathers = False
-    # Student code
+    # Student Code
     if (fur):
         print("Bat")
     elif(feathers):
         print("Bird")
     else:
         print("Insect")
+    # Student Code
     # assertions
 except Exception as e:
         eprint(e)

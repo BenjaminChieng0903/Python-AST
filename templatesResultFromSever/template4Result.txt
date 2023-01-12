@@ -1,0 +1,10 @@
+{
+    "_id": "4",
+    "language_id": 71,
+    "expected_output": "Passed",
+    "expected_answer": "    answer = input(\"When did World War 2 end: \")\n    if (answer == \"1945\"):\n        print(\"Correct\")\n    else:\n        print(\"Incorrect :(\")",
+    "data": [
+        "# User input with if statement\nimport sys\n\ndef eprint(*args, **kwargs):\n    print(*args, file=sys.stderr, **kwargs)\n    \ntry:\n    #Add things to make test work\n    # The input statement may need to be changed in the question as it will be difficult to test\n    # Student Code\n",
+        "\n    # Student Code\n    # assertions\n    \nexcept Exception as e:\n        eprint(e)\n\n# Test stdout, stderr, and exit code\n"
+    ]
+}

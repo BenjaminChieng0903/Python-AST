@@ -7,12 +7,13 @@ def eprint(*args, **kwargs):
 try:
     #Add things to make test work
     # The input statement may need to be changed in the question as it will be difficult to test
-    # Student code
+    # Student Code
     answer = input("When did World War 2 end: ")
     if (answer == "1945"):
         print("Correct")
     else:
         print("Incorrect :(")
+    # Student Code
     # assertions
     
 except Exception as e:
