@@ -209,7 +209,6 @@ for file in file_list:
                     for item in body_list:
                         if(item.end_col_offset == modified.end_col_offset):
                             item = modified
-
                 file_parameter = file.split('.')
                 generate_file_path = file_parameter[0] + '.txt'
                 try:
