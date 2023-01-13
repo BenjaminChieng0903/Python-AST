@@ -1,19 +1,13 @@
 {
-    "name_variables": [
-        {
-            "origin_var": "new1",
-            "current_var": "new"
-        }
-    ],
-    "string_constant": [
-        {
-            "origin_var": "N",
-            "current_var": "M"
-        }
-    ],
+    "name_variables": [],
+    "string_constant": [],
     "comparison_operators": [
         {
-            "origin_var": ">",
+            "origin_var": "<",
+            "current_var": "!="
+        },
+        {
+            "origin_var": "<",
             "current_var": "=="
         }
     ]
