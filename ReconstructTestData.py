@@ -1,11 +1,9 @@
 import ast
-from _ast import FunctionDef
-from typing import Any
 from colorama import Style
 import json
 import os
 
-folder = 'templatesResultFromSever'
+folder = 'templates'
 file_list = os.listdir(folder)
 #   if(a<b):
 #       print('A')
@@ -61,46 +59,48 @@ class reWriteCode3(ast.NodeVisitor):
         # print(expression_list)
         # print(node._fields)
         return new_node
-
+class reWriteCode4(ast.NodeVisitor):
+    
+    def generic_visit(self, node):
+        ast.NodeTransformer.generic_visit(self, node)
+        return node
+    def visit_FunctionDef(self, node):
+        if (node.name == oldFucntionName):
+            node.name = newFunctionName
+        return node
+    
+class reWriteCode5(ast.NodeVisitor):
+    def generic_visit(self, node):
+        ast.NodeTransformer.generic_visit(self, node)
+        return node
+    def visit_Try(self, node):
+        return node
+    
+    
 for file in file_list:
     file_path = folder + "/" + file
     #TODO get original data from server
     # we use templates_json file as example right now
     with open(file_path, 'r+') as template_response_data:
         download_data = template_response_data.read()
-        json_to_dict = json.loads(download_data)
-        #    root = ast.parse(json_to_dict['data'][0])
-        #    print(json_to_dict['data'][0])
-        # print(json_to_dict['data'][0])
-        # print(json_to_dict['expected_answer'])
-        # print(json_to_dict['data'][1])
-        original_python_file = json_to_dict['data'][0] + json_to_dict['expected_answer']+ json_to_dict['data'][1]
-        
-        # destructed_code_list = original_python_file.split('\n    # Student Code')
-        # print(destructed_code_list)
-        
 
-        # print(input_code[0])
-        # print(original_python_file)
-        # format_data = json_to_dict['expected_answer'].lstrip().replace('    ','  ')
-    # for code_item in destructed_code_list:
-        root = ast.parse(original_python_file)
-        print(ast.dump(root,indent=4))
+        root = ast.parse(download_data)
+        # print(ast.dump(root,indent=4))
         # print(ast_result)
     # question_dataList = ast_result.body[0].value.values[4].elts[0]
     # root = ast.parse(source)
     # print(ast.dump(root,indent=4))
         body_list = root.body
-        # print(body_list)
+        print(body_list)
         # print(body_list)
     #filter FunctionDef
-    try_filter = filter(lambda item: type(item)== ast.Try, body_list)
-    try_list = list(try_filter)
-# print(try_list[0].body)
+    function_filter = filter(lambda item: type(item)== ast.FunctionDef, body_list)
+    function_list = list(function_filter)
+    print(function_list)
     visitor1 = reWriteCode1()
     visitor2 = reWriteCode2()
     visitor3 = reWriteCode3()
-
+    visitor4 = reWriteCode4()
 
 
     SPEC_FILE_FORMAT = {
@@ -115,7 +115,8 @@ for file in file_list:
         print('1 for Variable Name change')
         print('2 for String Constant change')
         print('3 for Comparison Operator change')
-        print('4 for save and quit')
+        print('4 for function delaration change')
+        print('5 for quit')
         OPTION = input(Style.BRIGHT + Style.RESET_ALL)
         if OPTION == "1":
                 # function_index_str = input(Style.BRIGHT + 'choose function that you want to modify(following the order from up to down, starting from 1)' + Style.RESET_ALL)
@@ -199,15 +200,25 @@ for file in file_list:
                     print(e)
 
         elif OPTION == "4":
-            #TODO GET original data from server // post(url...)
-               
-               
-               
-            #TODO Read config file and modified the original data
-            #TODO reupload modified data to server
-            flag = False
-            #write json data into specfic parameters' value
-            
+            oldFucntionName = input(Style.BRIGHT + "Enter the function name that you want to change: " + Style.RESET_ALL)
+            newFunctionName = input(Style.BRIGHT + "Enter New function name: " + Style.RESET_ALL)
+            for item in function_list:
+                if (item.name == oldFucntionName):
+                    modified = visitor4.visit(item)
+                    print(ast.dump(modified,indent=4))
+                    for item in body_list:
+                        if(item.end_col_offset == modified.end_col_offset):
+                            item = modified
+
+                file_parameter = file.split('.')
+                generate_file_path = file_parameter[0] + '.txt'
+                try:
+                    with open(generate_file_path, 'w') as new_savedFile:
+                        new_savedFile.write(ast.unparse(root))
+                except:
+                    print('save failed')
+        elif OPTION == "5":
+           flag = False
         else: print('Wrong option input, please try again!')
 
 # print(ast.dump(new_root,indent=4))
