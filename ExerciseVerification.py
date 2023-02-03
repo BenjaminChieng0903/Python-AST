@@ -7,9 +7,7 @@ parser.add_argument('exercise_id', type=str, help='input exercise id')
 parser.add_argument('subquestion_id', type=str, help='input subquestion id')
 args = parser.parse_args()
 
-# now print the exercise id and subquestion id  
-print(args.exercise_id)
-print(args.subquestion_id)
+
 
 testMultipleQuestions = args.exercise_id
 
