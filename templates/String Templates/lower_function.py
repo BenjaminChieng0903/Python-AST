@@ -7,10 +7,9 @@ def eprint(*args, **kwargs):
 def test():
     try:
         #Add things to make test work
-        string = "puppy"
+        # need to make sure that lower is used and that the string isn't just written out
         # Student Code
-        for element in string:
-            print(element, end=' ')
+        print("Deere".lower())
         # Student Code
         # assertions
     except Exception as e:
@@ -18,4 +17,4 @@ def test():
 
     # Test stdout, stderr, and exit code
 
-    # stdout should be p u p p y
+    # stdout should be deere

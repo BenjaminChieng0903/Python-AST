@@ -1,4 +1,4 @@
-# Print a string using a for loop
+# String repetition print 
 import sys
 
 def eprint(*args, **kwargs):
@@ -7,10 +7,9 @@ def eprint(*args, **kwargs):
 def test():
     try:
         #Add things to make test work
-        string = "puppy"
+        # need to check that string repetition is used and that the string isn't just written out
         # Student Code
-        for element in string:
-            print(element, end=' ')
+        print("Uncopyrightable " * 7)
         # Student Code
         # assertions
     except Exception as e:
@@ -18,4 +17,4 @@ def test():
 
     # Test stdout, stderr, and exit code
 
-    # stdout should be p u p p y
+    # stdout should be Uncopyrightable Uncopyrightable Uncopyrightable Uncopyrightable Uncopyrightable Uncopyrightable Uncopyrightable 

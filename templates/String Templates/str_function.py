@@ -1,4 +1,4 @@
-# Print a string using a for loop
+# Convert to string
 import sys
 
 def eprint(*args, **kwargs):
@@ -7,15 +7,17 @@ def eprint(*args, **kwargs):
 def test():
     try:
         #Add things to make test work
-        string = "puppy"
+        
+        total = 5
         # Student Code
-        for element in string:
-            print(element, end=' ')
+        receipt = "$" + str(total)
+        print(receipt)
         # Student Code
         # assertions
+        assert receipt == "$5"
     except Exception as e:
             eprint(e)
 
     # Test stdout, stderr, and exit code
 
-    # stdout should be p u p p y
+    # stdout should be $5

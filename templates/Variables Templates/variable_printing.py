@@ -1,4 +1,4 @@
-# Print a string using a for loop
+# Print a variable
 import sys
 
 def eprint(*args, **kwargs):
@@ -7,10 +7,10 @@ def eprint(*args, **kwargs):
 def test():
     try:
         #Add things to make test work
-        string = "puppy"
+        # Need to check that the variable is printed an not just a written string
+        item3 = "Clothes"
         # Student Code
-        for element in string:
-            print(element, end=' ')
+        print(item3)
         # Student Code
         # assertions
     except Exception as e:
@@ -18,4 +18,4 @@ def test():
 
     # Test stdout, stderr, and exit code
 
-    # stdout should be p u p p y
+    # stdout should be Clothes

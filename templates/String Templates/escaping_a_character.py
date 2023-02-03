@@ -1,4 +1,4 @@
-# Print a string using a for loop
+# ASCII Art with new line
 import sys
 
 def eprint(*args, **kwargs):
@@ -7,15 +7,15 @@ def eprint(*args, **kwargs):
 def test():
     try:
         #Add things to make test work
-        string = "puppy"
+        # need to make sure that the characters are escaped and not printed by using "" instead of ''
         # Student Code
-        for element in string:
-            print(element, end=' ')
+        print('What is it that can\'t be done with patience?')
         # Student Code
         # assertions
+
     except Exception as e:
             eprint(e)
 
     # Test stdout, stderr, and exit code
 
-    # stdout should be p u p p y
+    # stdout should be  What is it that can't be done with patience?

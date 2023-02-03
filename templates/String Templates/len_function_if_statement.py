@@ -1,21 +1,25 @@
-# Print a string using a for loop
+# Length of a string with if statement
 import sys
 
 def eprint(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
-    
-def test():
+ 
+def test():   
     try:
         #Add things to make test work
-        string = "puppy"
+        # need to check that len is used to check if the string is greater than 7
+        snake = "<SSSSSSSSP"
         # Student Code
-        for element in string:
-            print(element, end=' ')
+        if (len(snake) > 7):
+            print("True")
+        else:
+            print("False")
         # Student Code
         # assertions
+
     except Exception as e:
             eprint(e)
 
     # Test stdout, stderr, and exit code
 
-    # stdout should be p u p p y
+    # stdout should be True

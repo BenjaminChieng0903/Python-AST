@@ -1,4 +1,4 @@
-# Print a string using a for loop
+# Length of a string
 import sys
 
 def eprint(*args, **kwargs):
@@ -7,15 +7,16 @@ def eprint(*args, **kwargs):
 def test():
     try:
         #Add things to make test work
-        string = "puppy"
+        # need to check that len is used and that 10 isn't just written out
+        snake = "<SSSSSSSSP"
         # Student Code
-        for element in string:
-            print(element, end=' ')
+        print(len(snake))
         # Student Code
         # assertions
+
     except Exception as e:
             eprint(e)
 
     # Test stdout, stderr, and exit code
 
-    # stdout should be p u p p y
+    # stdout should be 10

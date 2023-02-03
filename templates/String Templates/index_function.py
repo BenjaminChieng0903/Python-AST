@@ -1,4 +1,4 @@
-# Print a string using a for loop
+# Return the index of the first occurrence of a substring in a string
 import sys
 
 def eprint(*args, **kwargs):
@@ -7,15 +7,16 @@ def eprint(*args, **kwargs):
 def test():
     try:
         #Add things to make test work
-        string = "puppy"
+        race = "]---O-"
         # Student Code
-        for element in string:
-            print(element, end=' ')
+        position = race.index("O")
+        print(position)
         # Student Code
         # assertions
+        assert position == 5, "position should be 5"
     except Exception as e:
             eprint(e)
 
     # Test stdout, stderr, and exit code
 
-    # stdout should be p u p p y
+    # stdout should be 4

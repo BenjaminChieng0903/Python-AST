@@ -1,4 +1,4 @@
-# Print a string using a for loop
+# Check the type of a variable
 import sys
 
 def eprint(*args, **kwargs):
@@ -7,10 +7,9 @@ def eprint(*args, **kwargs):
 def test():
     try:
         #Add things to make test work
-        string = "puppy"
+        fish = 45
         # Student Code
-        for element in string:
-            print(element, end=' ')
+        print(type(fish))
         # Student Code
         # assertions
     except Exception as e:
@@ -18,4 +17,4 @@ def test():
 
     # Test stdout, stderr, and exit code
 
-    # stdout should be p u p p y
+    # stdout should be <class 'int'>
