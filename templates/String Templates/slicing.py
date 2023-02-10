@@ -4,19 +4,22 @@ import sys
 def eprint(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
     
-def test():
-    try:
-        #Add things to make test work
-        
-        water = "tapdustwater"
-        # Student Code
-        ans = water[3:7]
-        # Student Code
-        # assertions
-        assert ans == "dust"
-    except Exception as e:
-            eprint(e)
+def test(water):
+    ans = water[3:7]
+    # assertions
+    assert ans == "dust"
+    
+try:
+    #Add things to make test work
+    
+    water = "tapdustwater"
+    # Student Code
+    test(water)
+    # Student Code
 
-    # Test stdout, stderr, and exit code
+except Exception as e:
+        eprint(e)
 
-    # stdout should be 
+# Test stdout, stderr, and exit code
+
+# stdout should be 

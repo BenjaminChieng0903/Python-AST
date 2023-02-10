@@ -4,19 +4,22 @@ import sys
 def eprint(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
     
-def test():
-    try:
-        #Add things to make test work
-        race = "]---O-"
-        # Student Code
-        position = race.index("O")
-        print(position)
-        # Student Code
-        # assertions
-        assert position == 5, "position should be 5"
-    except Exception as e:
-            eprint(e)
+def test(race):
+    position = race.index("O")
+    print(position)
+    # assertions
+    assert position == 5, "position should be 5"
+    
+try:
+    #Add things to make test work
+    race = "]---O-"
+    # Student Code
+    test()
+    # Student Code
+    
+except Exception as e:
+        eprint(e)
 
-    # Test stdout, stderr, and exit code
+# Test stdout, stderr, and exit code
 
-    # stdout should be 4
+# stdout should be 4

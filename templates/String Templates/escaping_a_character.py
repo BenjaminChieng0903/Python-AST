@@ -5,17 +5,19 @@ def eprint(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
     
 def test():
-    try:
-        #Add things to make test work
-        # need to make sure that the characters are escaped and not printed by using "" instead of ''
-        # Student Code
-        print('What is it that can\'t be done with patience?')
-        # Student Code
-        # assertions
+    print('What is it that can\'t be done with patience?')
 
-    except Exception as e:
-            eprint(e)
+try:
+    #Add things to make test work
+    # need to make sure that the characters are escaped and not printed by using "" instead of ''
+    # Student Code
+    test()
+    # Student Code
+    # assertions
 
-    # Test stdout, stderr, and exit code
+except Exception as e:
+        eprint(e)
 
-    # stdout should be  What is it that can't be done with patience?
+# Test stdout, stderr, and exit code
+
+# stdout should be  What is it that can't be done with patience?

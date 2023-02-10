@@ -4,18 +4,20 @@ import sys
 def eprint(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
     
-def test():
-    try:
-        #Add things to make test work
-        string = "puppy"
-        # Student Code
-        for element in string:
-            print(element, end=' ')
-        # Student Code
-        # assertions
-    except Exception as e:
-            eprint(e)
+def test(string):
+    for element in string:
+        print(element, end=' ')
+    
+try:
+    #Add things to make test work
+    string = "puppy"
+    # Student Code
+    test(string)
+    # Student Code
+    # assertions
+except Exception as e:
+        eprint(e)
 
-    # Test stdout, stderr, and exit code
+# Test stdout, stderr, and exit code
 
-    # stdout should be p u p p y
+# stdout should be p u p p y
