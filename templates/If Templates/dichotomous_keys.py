@@ -6,11 +6,11 @@ def eprint(*args, **kwargs):
     
 def test(fur, feathers):
     if (fur):
-            print("Bat")
+        print("Bat")
     elif(feathers):
-            print("Bird")
+        print("Bird")
     else:
-            print("Insect")
+        print("Insect")
     
     
     

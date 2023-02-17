@@ -69,7 +69,7 @@ else:
     response_data = response_data["choices"]
     
     # test if it works
-    response_data = ["A", "B"]
+    response_data = ["B", "C"]
     
     if question_type == "multi-choice" or question_type == "true-false":
         # check if data is within the choices
@@ -82,7 +82,7 @@ else:
                     invalid = False
             print(invalid)
             if invalid == True:
-                # print("Error: Invalid answer")
+                print("Error: Invalid answer")
                 break
     else:
         print("Data was not checked for validity")
@@ -92,14 +92,14 @@ else:
         # there is an error in the response data so no post request will be made
     else:
         response_post = {
-            "_id": response_json["_id"] + "-0",
+            "_id": response_json["_id"] + "-" + args.subquestion_id ,
             "data": response_data
         }
         try:
             # post request
             url = "https://academy.aubot.com/api/tests/mc"
             payload = json.dumps({
-                "_id": response_json["_id"] + "-0",
+                 "_id": response_json["_id"] + "-" + args.subquestion_id ,
                 "data": response_data
             })
             headers = {
