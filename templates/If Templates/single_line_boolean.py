@@ -15,6 +15,10 @@ try:
     
     # Student Code
     test(Algeria, Argentina)
+    
+    Algeria = 2.7
+    Argentina = 2.3
+    test(Algeria, Argentina)
     # Student Code
     
     # assertions

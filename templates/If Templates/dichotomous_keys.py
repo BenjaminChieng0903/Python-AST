@@ -22,6 +22,15 @@ try:
     feathers = False
     # Student code
     test(fur, feathers)
+    fur = True
+    feathers = False
+    test(fur, feathers)
+    fur = False
+    feathers = True
+    test(fur, feathers)
+    fur = True
+    feathers = True
+    test(fur, feathers)
     # assertions
 except Exception as e:
         eprint(e)

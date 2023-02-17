@@ -15,6 +15,10 @@ try:
     Canada = 7
     # Student code
     test(Russia, Canada)
+    
+    Russia = 7
+    Canada = 10
+    test(Russia, Canada)
     # assertions
 except Exception as e:
         eprint(e)
