@@ -1,0 +1,84 @@
+1.2: Multiple Choice Questions
+
+1.3: Multiple Choice Questions
+
+1.4: 
+ex 11 - 17 Multiple Choice Questions
+ex 18 - 25 variable assignment
+
+2.0:
+ex 1 - 14 Multiple Choice Questions
+ex 15 - 19 Fill in the Blank
+ex 20 variable assignment
+ex 21 - 24 variable printing
+
+3.1:
+ex 1 - 2 Fill in the Blank
+ex 3 - 5 expression printing
+ex 6 - 18 Multiple Choice Questions
+ex 19 variable assignment
+ex 20 - 23 Fill in the Blank
+ex 24 expression printing
+ex 25 variable assignment
+ex 26 Non-Coding
+ex 27 - 28 variable printing
+
+3.2:
+ex 29 - 33 Multiple Choice Questions
+ex 34 - 39 Fill in the Blank
+
+4.0:
+ex 1 - 20 Multiple Choice Questions
+
+5.0:
+ex 1 - 5 Multiple Choice Questions
+ex 6 - 10 Fill in the Blank
+ex 11 - 19 multiple variable assignment
+
+6.1:
+ex 1 - 4 Multiple Choice Questions
+ex 5 - 7 Fill in the Blank
+ex 8 - 13 expression printing
+ex 14 - 19 variable reassignment
+
+6.2:
+ex 20 - 39 Multiple Choice Questions
+ex 40 - 47 Fill in the Blank
+
+7.1:
+ex 1 - 10 Multiple Choice Questions
+
+7.2:
+ex 11 - 20 Multiple Choice Questions
+
+7.3:
+ex 21 - 26 Multiple Choice Questions
+ex 27 - 31 str printing
+
+8.1:
+ex 1 - 10 Multiple Choice Questions
+ex 11 - 20 Input() Questions
+
+8.2:
+ex 21 - 22 Fill in the Blank
+ex 23 - 30 Input() Questions
+
+8.3:
+ex 31 - 36 Multiple Choice Questions
+ex 37 - 40 Input() Questions
+
+9.0:
+ex 1 - 20 Multiple Choice Questions
+ex 21 - 23 type function
+ex 24 - 29 type comparison
+ex 30 type function
+ex 31 - 46 Multiple Choice Questions
+ex 47 - 51 type function
+ex 52 - 56 Multiple Choice Questions
+ex 57 Input() Questions
+ex 58 type function
+ex 59 Input() Questions
+ex 60 type function
+ex 61 - 62 Input() Questions
+ex 63 - 65 type function
+ex 66 Input() Questions
