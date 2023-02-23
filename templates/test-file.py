@@ -14,9 +14,7 @@ def assert_true(condition, message):
         raise Internal_Explanation(message)
 
 def area(length):
-    # Student Code
     return length * length
-    # Student Code
 
 try:
     # Public test

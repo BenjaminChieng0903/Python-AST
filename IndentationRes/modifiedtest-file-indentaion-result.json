@@ -1,0 +1,26 @@
+{
+    "Indentation_result": [
+        {
+            "_id": "modifiedtest-file.py",
+            "expected_answer": "def area1(length):\n    return length * length",
+            "indentation": 0,
+            "data": [
+                "import sys\n\nclass Internal_Explanation(Exception):\n\n    def __init__(self, message):\n        super().__init__(f\"Explanation: {message}\")\n\ndef eprint(*args, **kwargs):\n    print(*args, file=sys.stderr, **kwargs)\n\ndef assert_true(condition, message):\n    if not condition:\n        raise Internal_Explanation(message)\n\n",
+                "\ntry:\n    assert_true(area1(2) == 4, \"Area of a square of length 2 must be 4. Check your code\")\n    assert_true(area1(3) == 9, \"Area of a square of length 3 must be 9. Check your code\")\n    assert_true(area1(10) == 100, \"Your code does not work with general bigger number. Try following the formula\")\n    print(\"Passed\")\nexcept NameError as nameerror:\n    eprint(nameerror)\nexcept Internal_Explanation as e:\n    eprint(e)"
+            ],
+            "language_id": 71,
+            "expected-output": "Passed\n"
+        },
+        {
+            "_id": "modifiedtest-file.py",
+            "expected_answer": "    return length * length",
+            "indentation": 1,
+            "data": [
+                "import sys\n\nclass Internal_Explanation(Exception):\n\n    def __init__(self, message):\n        super().__init__(f\"Explanation: {message}\")\n\ndef eprint(*args, **kwargs):\n    print(*args, file=sys.stderr, **kwargs)\n\ndef assert_true(condition, message):\n    if not condition:\n        raise Internal_Explanation(message)\n\ndef area1(length):\n",
+                "\ntry:\n    assert_true(area1(2) == 4, \"Area of a square of length 2 must be 4. Check your code\")\n    assert_true(area1(3) == 9, \"Area of a square of length 3 must be 9. Check your code\")\n    assert_true(area1(10) == 100, \"Your code does not work with general bigger number. Try following the formula\")\n    print(\"Passed\")\nexcept NameError as nameerror:\n    eprint(nameerror)\nexcept Internal_Explanation as e:\n    eprint(e)"
+            ],
+            "language_id": 71,
+            "expected-output": "Passed\n"
+        }
+    ]
+}

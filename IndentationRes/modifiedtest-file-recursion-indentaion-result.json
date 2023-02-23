@@ -1,0 +1,49 @@
+{
+    "Indentation_result": [
+        {
+            "expected_answer": "def number1(num):\n    global functionCallCount\n    functionCallCount += 1\n    assert_true(num >= 0, \"Your recursive function did not implement stop condition at num == 0\")\n    return 0 if num == 0 else 1 + number1(num - 1)",
+            "indentation": 0,
+            "data": [
+                "import sys\n\nclass Internal_Explanation(Exception):\n\n    def __init__(self, message):\n        super().__init__(f\"Explanation: {message}\")\n\ndef eprint(*args, **kwargs):\n    print(*args, file=sys.stderr, **kwargs)\n\ndef assert_true(condition, message):\n    if not condition:\n        raise Internal_Explanation(message)\nfunctionCallCount = 0\n\n",
+                "\ntry:\n    assert_true(number1(0) == 0, \"The function number with 0 as argument should return 0.\")\n    assert_true(functionCallCount == 1, \"number(0) should be setup as the base case for recursion.\")\n    assert_true(number1(2) == 2, \"The function number with 2 as argument should return 2.\")\n    assert_true(functionCallCount == 4, \"number(2) should call itself two more times.\")\n    print(\"111\")\nexcept NameError as nameerror:\n    eprint(nameerror)\nexcept Internal_Explanation as e:\n    eprint(e)"
+            ],
+            "expected-output": "111\n"
+        },
+        {
+            "expected_answer": "    global functionCallCount",
+            "indentation": 1,
+            "data": [
+                "import sys\n\nclass Internal_Explanation(Exception):\n\n    def __init__(self, message):\n        super().__init__(f\"Explanation: {message}\")\n\ndef eprint(*args, **kwargs):\n    print(*args, file=sys.stderr, **kwargs)\n\ndef assert_true(condition, message):\n    if not condition:\n        raise Internal_Explanation(message)\nfunctionCallCount = 0\n\ndef number1(num):\n",
+                "\n    functionCallCount += 1\n    assert_true(num >= 0, \"Your recursive function did not implement stop condition at num == 0\")\n    return 0 if num == 0 else 1 + number1(num - 1)\ntry:\n    assert_true(number1(0) == 0, \"The function number with 0 as argument should return 0.\")\n    assert_true(functionCallCount == 1, \"number(0) should be setup as the base case for recursion.\")\n    assert_true(number1(2) == 2, \"The function number with 2 as argument should return 2.\")\n    assert_true(functionCallCount == 4, \"number(2) should call itself two more times.\")\n    print(\"111\")\nexcept NameError as nameerror:\n    eprint(nameerror)\nexcept Internal_Explanation as e:\n    eprint(e)"
+            ],
+            "expected-output": "111\n"
+        },
+        {
+            "expected_answer": "    functionCallCount += 1",
+            "indentation": 1,
+            "data": [
+                "import sys\n\nclass Internal_Explanation(Exception):\n\n    def __init__(self, message):\n        super().__init__(f\"Explanation: {message}\")\n\ndef eprint(*args, **kwargs):\n    print(*args, file=sys.stderr, **kwargs)\n\ndef assert_true(condition, message):\n    if not condition:\n        raise Internal_Explanation(message)\nfunctionCallCount = 0\n\ndef number1(num):\n    global functionCallCount\n",
+                "\n    assert_true(num >= 0, \"Your recursive function did not implement stop condition at num == 0\")\n    return 0 if num == 0 else 1 + number1(num - 1)\ntry:\n    assert_true(number1(0) == 0, \"The function number with 0 as argument should return 0.\")\n    assert_true(functionCallCount == 1, \"number(0) should be setup as the base case for recursion.\")\n    assert_true(number1(2) == 2, \"The function number with 2 as argument should return 2.\")\n    assert_true(functionCallCount == 4, \"number(2) should call itself two more times.\")\n    print(\"111\")\nexcept NameError as nameerror:\n    eprint(nameerror)\nexcept Internal_Explanation as e:\n    eprint(e)"
+            ],
+            "expected-output": "111\n"
+        },
+        {
+            "expected_answer": "    assert_true(num >= 0, \"Your recursive function did not implement stop condition at num == 0\")",
+            "indentation": 1,
+            "data": [
+                "import sys\n\nclass Internal_Explanation(Exception):\n\n    def __init__(self, message):\n        super().__init__(f\"Explanation: {message}\")\n\ndef eprint(*args, **kwargs):\n    print(*args, file=sys.stderr, **kwargs)\n\ndef assert_true(condition, message):\n    if not condition:\n        raise Internal_Explanation(message)\nfunctionCallCount = 0\n\ndef number1(num):\n    global functionCallCount\n    functionCallCount += 1\n",
+                "\n    return 0 if num == 0 else 1 + number1(num - 1)\ntry:\n    assert_true(number1(0) == 0, \"The function number with 0 as argument should return 0.\")\n    assert_true(functionCallCount == 1, \"number(0) should be setup as the base case for recursion.\")\n    assert_true(number1(2) == 2, \"The function number with 2 as argument should return 2.\")\n    assert_true(functionCallCount == 4, \"number(2) should call itself two more times.\")\n    print(\"111\")\nexcept NameError as nameerror:\n    eprint(nameerror)\nexcept Internal_Explanation as e:\n    eprint(e)"
+            ],
+            "expected-output": "111\n"
+        },
+        {
+            "expected_answer": "    return 0 if num == 0 else 1 + number1(num - 1)",
+            "indentation": 1,
+            "data": [
+                "import sys\n\nclass Internal_Explanation(Exception):\n\n    def __init__(self, message):\n        super().__init__(f\"Explanation: {message}\")\n\ndef eprint(*args, **kwargs):\n    print(*args, file=sys.stderr, **kwargs)\n\ndef assert_true(condition, message):\n    if not condition:\n        raise Internal_Explanation(message)\nfunctionCallCount = 0\n\ndef number1(num):\n    global functionCallCount\n    functionCallCount += 1\n    assert_true(num >= 0, \"Your recursive function did not implement stop condition at num == 0\")\n",
+                "\ntry:\n    assert_true(number1(0) == 0, \"The function number with 0 as argument should return 0.\")\n    assert_true(functionCallCount == 1, \"number(0) should be setup as the base case for recursion.\")\n    assert_true(number1(2) == 2, \"The function number with 2 as argument should return 2.\")\n    assert_true(functionCallCount == 4, \"number(2) should call itself two more times.\")\n    print(\"111\")\nexcept NameError as nameerror:\n    eprint(nameerror)\nexcept Internal_Explanation as e:\n    eprint(e)"
+            ],
+            "expected-output": "111\n"
+        }
+    ]
+}
