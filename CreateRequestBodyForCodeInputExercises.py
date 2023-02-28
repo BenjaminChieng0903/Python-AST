@@ -5,6 +5,7 @@ import json
 import pyperclip
 import time
 
+
 os.system('cls')
 colorama.init()
 
@@ -26,12 +27,15 @@ while (True):
             print(Fore.LIGHTGREEN_EX + "\nUsed EXERCISE_TEST_FILE_LOCATION and ID to generate the Exercise Test File Path!" + Style.RESET_ALL)
         else:
             exercise_test_file_path = input(Style.BRIGHT + "Enter Exercise Test Code File Path: " + Style.RESET_ALL) # Otherwise, ask for exercise_test_file_path.
-        
+
+        file_split = exercise_test_file_path.split('/')
+        file_prefix = file_split[len(file_split)-1].removesuffix(FILE_EXTENSION)
+        print(file_prefix)
         exercise_test_file = open(exercise_test_file_path, "r")
 
         code = exercise_test_file.read()
-
         """Calculate Code Delimiter Indices"""
+
         first_code_delimiter_index = code.index(CODE_DELIMITER) + len(CODE_DELIMITER)
         if (code[first_code_delimiter_index:first_code_delimiter_index + 1] == "\n"): # If there is a newline after the first code delimiter ...
             first_code_delimiter_index += 1 # add it to the index.
@@ -55,15 +59,19 @@ while (True):
         }, indent = 4)
 
         print(Style.BRIGHT + "\nRequest Body:\n" + Style.RESET_ALL, request_body, "\n")
-
         exercise_test_file.close()
 
         """Copy Request Body to Clipboard"""
         try:
             pyperclip.copy(request_body)
             print(Fore.LIGHTGREEN_EX + "Copied to clipboard!\n\n\n" + Style.RESET_ALL)
+
         except:
             print(Fore.LIGHTRED_EX + "NOT copied to clipboard!\n\n\n" + Style.RESET_ALL)
+        # savedFile = open(file_prefix+'Result.txt','w')
+        # savedFile.write(str(request_body))
+            with open(file_prefix+'Result.txt','w') as savedFile:
+                savedFile.write(str(request_body))
 
     except Exception as e:
         print(Fore.LIGHTRED_EX + "\nError: ", e, "\n\n\n" + Style.RESET_ALL)
